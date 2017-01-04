@@ -38,7 +38,7 @@ class nuevo:
             db.insert('contactos', nombre=formNew.d.Nombre, 
             telefono=formNew.d.Telefono, email=formNew.d.Email)
             result=db.select('contactos')
-            raise web.seeother('/index')
+            raise web.seeother('/')
             
 
 class editar:
@@ -62,7 +62,7 @@ class editar:
             db.update('contactos', where='id=%s'%(id), nombre=formEdit.d.Nombre,
              telefono=formEdit.d.Telefono, email=formEdit.d.Email)
             result=db.select('contactos')
-            raise web.seeother('/index')
+            raise web.seeother('/')
 class eliminar:
     def GET(self,id):
         formEdit=myformAgenda()
@@ -81,7 +81,7 @@ class eliminar:
             return render.eliminar(formEdit)
         else:
             db.delete('contactos', where="id=%s"%(id))
-            raise web.seeother('/index')
+            raise web.seeother('/')
 
 
 if __name__ == "__main__":

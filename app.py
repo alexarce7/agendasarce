@@ -5,7 +5,7 @@ db = web.database(dbn='mysql', db='hfrxtn74simz55uf', user='j9v57928h6ddo4ch', p
 render=web.template.render('templates')
 urls = (
     
-    '/index','index',
+    '/','index',
     '/nuevo', 'nuevo',
     '/editar/(.+)','editar',
     '/eliminar/(.+)','eliminar'
